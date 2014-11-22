@@ -12,6 +12,8 @@ namespace WindowsFormsApplication1
 {
     public partial class Doctor_s_Form : Form
     {
+        DateTime Snooze;
+
         public Doctor_s_Form(string val)
         {
             InitializeComponent();
@@ -52,6 +54,30 @@ namespace WindowsFormsApplication1
 
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
+            
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            
+                      
+            if (DateTime.Now == Snooze)
+            {
+               
+                MessageBox.Show("");
+                timer1.Stop(); 
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+            Snooze = DateTime.Now.AddSeconds(10); ;
+           // MessageBox.Show(DateTime.Now + "/n" + Snooze);
+            if (DateTime.Now.Equals(Snooze)) 
+            {
+                MessageBox.Show("ADjalsalj");
+            }
             
         }
         }

@@ -14,10 +14,11 @@ namespace WindowsFormsApplication1
     public partial class patient_profile : Form
     {
         SqlConnection con = new SqlConnection(global::WindowsFormsApplication1.Properties.Settings.Default.inside_470ConnectionString);
-        public patient_profile(string val)
+        public patient_profile(String val)
         {
             InitializeComponent();
-            label9.Text = val;
+            textBox5.Text = val;
+            
 
             string sql = "SELECT patient_id from [patient_info]";
             Random ran=new Random();
@@ -32,8 +33,8 @@ namespace WindowsFormsApplication1
                     }
                 }
                 reader.Close();
-                label8.Text = num+"";
-            }
+                textBox4.Text = num+"";
+}
             catch (Exception en)
             {
                 MessageBox.Show(en.Message, "error", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -46,9 +47,8 @@ namespace WindowsFormsApplication1
 
         private void button1_Click(object sender, EventArgs e)
         {
-
-            int patient_id = Convert.ToInt32(label8.Text);
-            string user_id = label9.Text;
+            int patient_id = Convert.ToInt32(textBox4.Text); ;
+            string user_id = textBox5.Text;
             string name = textBox1.Text;
             int age = Convert.ToInt32(textBox2.Text);
             int weight = Convert.ToInt32(textBox3.Text);
@@ -105,7 +105,7 @@ namespace WindowsFormsApplication1
 
         private void button3_Click(object sender, EventArgs e)
         {
-            string user_id = label9.Text;
+            string user_id = textBox5.Text;
             string sql = "SELECT user_id from [log_info] where  (user_id ='"+user_id+"')";
             try
             {
@@ -157,6 +157,13 @@ namespace WindowsFormsApplication1
             finally {
                 con.Close();
             }
+            Appointment_s_Form newForm = new Appointment_s_Form();
+            newForm.Show();
+        }
+
+        private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
