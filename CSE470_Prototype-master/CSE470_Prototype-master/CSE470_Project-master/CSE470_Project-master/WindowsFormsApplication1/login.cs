@@ -23,13 +23,11 @@ namespace WindowsFormsApplication1
 
             Form3 newForm = new Form3();
             newForm.Show();
-           
-            this.Hide();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            ;
+
         }
 
         private void lblLink1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

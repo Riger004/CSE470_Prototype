@@ -99,14 +99,6 @@ namespace WindowsFormsApplication1
             finally {
                 con.Close();
             }
-            
-        }
-
-        private void back_button_Click(object sender, EventArgs e)
-        {
-            login newLogin = new login();
-            newLogin.Show();
-            this.Hide();
         }
     }
 }

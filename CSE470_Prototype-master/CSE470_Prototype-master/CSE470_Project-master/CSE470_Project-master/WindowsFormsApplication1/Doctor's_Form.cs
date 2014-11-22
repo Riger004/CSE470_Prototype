@@ -7,18 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Diagnostics;
-
+using System.Data.SqlClient;
 namespace WindowsFormsApplication1
 {
     public partial class Doctor_s_Form : Form
     {
-        DateTime Snooze;
-        private Timer tm;
         public Doctor_s_Form(string val)
         {
             InitializeComponent();
-            label1.Text = "Welcome Doc " + val + " have a nice time";
+            label1.Text = "Welcome Doc "+val+" have a nice time";
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -28,6 +25,8 @@ namespace WindowsFormsApplication1
 
         private void Doctor_s_Form_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'inside_470DataSet.patient_info' table. You can move, or remove it, as needed.
+            this.patient_infoTableAdapter.Fill(this.inside_470DataSet.patient_info);
 
         }
 
@@ -43,7 +42,7 @@ namespace WindowsFormsApplication1
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+               
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -55,28 +54,14 @@ namespace WindowsFormsApplication1
 
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-
-            tm.Stop();
-            MessageBox.Show("asdjad");
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            tm = new Timer();
-            tm.Interval = 1 * 1000; // 10 seconds
-            tm.Tick += new EventHandler(timer1_Tick);
-            tm.Start();
-
+            
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-
+            dataGridView1.Show();
+        }
         }
     }
-}
+
+

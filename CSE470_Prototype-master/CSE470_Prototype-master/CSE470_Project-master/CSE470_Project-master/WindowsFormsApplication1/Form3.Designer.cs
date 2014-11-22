@@ -28,15 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
             this.lblForm2email = new System.Windows.Forms.Label();
             this.lblForm2Password = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.back_button = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblForm2email
@@ -78,7 +75,7 @@
             // 
             this.button1.BackColor = System.Drawing.SystemColors.HotTrack;
             this.button1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(224, 203);
+            this.button1.Location = new System.Drawing.Point(224, 181);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(148, 34);
             this.button1.TabIndex = 20;
@@ -96,36 +93,11 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.BackColor = System.Drawing.Color.Transparent;
-            this.checkBox1.Location = new System.Drawing.Point(224, 173);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(95, 17);
-            this.checkBox1.TabIndex = 23;
-            this.checkBox1.Text = "Remember Me";
-            this.checkBox1.UseVisualStyleBackColor = false;
-            // 
-            // back_button
-            // 
-            this.back_button.BackColor = System.Drawing.Color.Transparent;
-            this.back_button.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("back_button.BackgroundImage")));
-            this.back_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.back_button.Location = new System.Drawing.Point(50, 24);
-            this.back_button.Name = "back_button";
-            this.back_button.Size = new System.Drawing.Size(34, 27);
-            this.back_button.TabIndex = 24;
-            this.back_button.UseVisualStyleBackColor = false;
-            this.back_button.Click += new System.EventHandler(this.back_button_Click);
-            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(591, 398);
-            this.Controls.Add(this.back_button);
-            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lblForm2email);
@@ -147,7 +119,5 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.Button back_button;
     }
 }

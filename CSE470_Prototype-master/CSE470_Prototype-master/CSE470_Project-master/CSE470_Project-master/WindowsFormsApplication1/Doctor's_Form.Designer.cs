@@ -37,35 +37,43 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.csE_470_peraDataSet1 = new WindowsFormsApplication1.CSE_470_peraDataSet();
-            ((System.ComponentModel.ISupportInitialize)(this.csE_470_peraDataSet1)).BeginInit();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.inside_470DataSet = new WindowsFormsApplication1.inside_470DataSet();
+            this.patientinfoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.patient_infoTableAdapter = new WindowsFormsApplication1.inside_470DataSetTableAdapters.patient_infoTableAdapter();
+            this.patientidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fuseridDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ageDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.weightDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pastmedhistDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contactnumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inside_470DataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.patientinfoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(31, 237);
+            this.button1.Location = new System.Drawing.Point(31, 213);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 3;
             this.button1.Text = "Snooze";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tempus Sans ITC", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(27, 9);
+            this.label1.Location = new System.Drawing.Point(63, 13);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(147, 24);
+            this.label1.Size = new System.Drawing.Size(85, 13);
             this.label1.TabIndex = 4;
-            this.label1.Text = "Welcome Back!";
+            this.label1.Text = "welcome for doc";
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(31, 72);
+            this.button2.Location = new System.Drawing.Point(31, 48);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(161, 33);
             this.button2.TabIndex = 5;
@@ -75,7 +83,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(31, 177);
+            this.button4.Location = new System.Drawing.Point(31, 153);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(161, 33);
             this.button4.TabIndex = 7;
@@ -85,7 +93,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(31, 122);
+            this.button3.Location = new System.Drawing.Point(31, 98);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(161, 35);
             this.button3.TabIndex = 6;
@@ -104,7 +112,7 @@
             "Thursday",
             "Friday",
             "Saturday"});
-            this.comboBox1.Location = new System.Drawing.Point(235, 122);
+            this.comboBox1.Location = new System.Drawing.Point(235, 98);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 8;
@@ -123,7 +131,7 @@
             "3.00",
             "4.00",
             "5.00"});
-            this.comboBox2.Location = new System.Drawing.Point(391, 122);
+            this.comboBox2.Location = new System.Drawing.Point(391, 98);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(121, 21);
             this.comboBox2.TabIndex = 9;
@@ -139,7 +147,7 @@
             "15-30",
             "30-45",
             "45-60"});
-            this.comboBox3.Location = new System.Drawing.Point(558, 122);
+            this.comboBox3.Location = new System.Drawing.Point(558, 98);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(121, 21);
             this.comboBox3.TabIndex = 10;
@@ -147,28 +155,88 @@
             this.comboBox3.Visible = false;
             this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
             // 
-            // dateTimePicker1
+            // dataGridView1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(31, 36);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 11;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.patientidDataGridViewTextBoxColumn,
+            this.fuseridDataGridViewTextBoxColumn,
+            this.nameDataGridViewTextBoxColumn,
+            this.ageDataGridViewTextBoxColumn,
+            this.weightDataGridViewTextBoxColumn,
+            this.pastmedhistDataGridViewTextBoxColumn,
+            this.contactnumDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.patientinfoBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(235, 153);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(444, 220);
+            this.dataGridView1.TabIndex = 11;
+            this.dataGridView1.Visible = false;
             // 
-            // timer1
+            // inside_470DataSet
             // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.inside_470DataSet.DataSetName = "inside_470DataSet";
+            this.inside_470DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // csE_470_peraDataSet1
+            // patientinfoBindingSource
             // 
-            this.csE_470_peraDataSet1.DataSetName = "CSE_470_peraDataSet";
-            this.csE_470_peraDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.patientinfoBindingSource.DataMember = "patient_info";
+            this.patientinfoBindingSource.DataSource = this.inside_470DataSet;
+            // 
+            // patient_infoTableAdapter
+            // 
+            this.patient_infoTableAdapter.ClearBeforeFill = true;
+            // 
+            // patientidDataGridViewTextBoxColumn
+            // 
+            this.patientidDataGridViewTextBoxColumn.DataPropertyName = "patient_id";
+            this.patientidDataGridViewTextBoxColumn.HeaderText = "patient_id";
+            this.patientidDataGridViewTextBoxColumn.Name = "patientidDataGridViewTextBoxColumn";
+            // 
+            // fuseridDataGridViewTextBoxColumn
+            // 
+            this.fuseridDataGridViewTextBoxColumn.DataPropertyName = "f_user_id";
+            this.fuseridDataGridViewTextBoxColumn.HeaderText = "f_user_id";
+            this.fuseridDataGridViewTextBoxColumn.Name = "fuseridDataGridViewTextBoxColumn";
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "name";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            // 
+            // ageDataGridViewTextBoxColumn
+            // 
+            this.ageDataGridViewTextBoxColumn.DataPropertyName = "age";
+            this.ageDataGridViewTextBoxColumn.HeaderText = "age";
+            this.ageDataGridViewTextBoxColumn.Name = "ageDataGridViewTextBoxColumn";
+            // 
+            // weightDataGridViewTextBoxColumn
+            // 
+            this.weightDataGridViewTextBoxColumn.DataPropertyName = "weight";
+            this.weightDataGridViewTextBoxColumn.HeaderText = "weight";
+            this.weightDataGridViewTextBoxColumn.Name = "weightDataGridViewTextBoxColumn";
+            // 
+            // pastmedhistDataGridViewTextBoxColumn
+            // 
+            this.pastmedhistDataGridViewTextBoxColumn.DataPropertyName = "past_med_hist";
+            this.pastmedhistDataGridViewTextBoxColumn.HeaderText = "past_med_hist";
+            this.pastmedhistDataGridViewTextBoxColumn.Name = "pastmedhistDataGridViewTextBoxColumn";
+            // 
+            // contactnumDataGridViewTextBoxColumn
+            // 
+            this.contactnumDataGridViewTextBoxColumn.DataPropertyName = "contact_num";
+            this.contactnumDataGridViewTextBoxColumn.HeaderText = "contact_num";
+            this.contactnumDataGridViewTextBoxColumn.Name = "contactnumDataGridViewTextBoxColumn";
             // 
             // Doctor_s_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(716, 464);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBox1);
@@ -180,7 +248,9 @@
             this.Name = "Doctor_s_Form";
             this.Text = "Doctor_s_Form";
             this.Load += new System.EventHandler(this.Doctor_s_Form_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.csE_470_peraDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inside_470DataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.patientinfoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -196,8 +266,16 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Timer timer1;
-        private CSE_470_peraDataSet csE_470_peraDataSet1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private inside_470DataSet inside_470DataSet;
+        private System.Windows.Forms.BindingSource patientinfoBindingSource;
+        private inside_470DataSetTableAdapters.patient_infoTableAdapter patient_infoTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn patientidDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fuseridDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ageDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn weightDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pastmedhistDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn contactnumDataGridViewTextBoxColumn;
     }
 }

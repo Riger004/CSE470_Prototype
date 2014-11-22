@@ -14,11 +14,10 @@ namespace WindowsFormsApplication1
     public partial class patient_profile : Form
     {
         SqlConnection con = new SqlConnection(global::WindowsFormsApplication1.Properties.Settings.Default.inside_470ConnectionString);
-        public patient_profile(String val)
+        public patient_profile(string val)
         {
             InitializeComponent();
-            textBox5.Text = val;
-            
+            label9.Text = val;
 
             string sql = "SELECT patient_id from [patient_info]";
             Random ran=new Random();
@@ -33,8 +32,8 @@ namespace WindowsFormsApplication1
                     }
                 }
                 reader.Close();
-                textBox4.Text = num+"";
-}
+                label8.Text = num+"";
+            }
             catch (Exception en)
             {
                 MessageBox.Show(en.Message, "error", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -47,8 +46,9 @@ namespace WindowsFormsApplication1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int patient_id = Convert.ToInt32(textBox4.Text); ;
-            string user_id = textBox5.Text;
+
+            int patient_id = Convert.ToInt32(label8.Text);
+            string user_id = label9.Text;
             string name = textBox1.Text;
             int age = Convert.ToInt32(textBox2.Text);
             int weight = Convert.ToInt32(textBox3.Text);
@@ -105,7 +105,7 @@ namespace WindowsFormsApplication1
 
         private void button3_Click(object sender, EventArgs e)
         {
-            string user_id = textBox5.Text;
+            string user_id = label9.Text;
             string sql = "SELECT user_id from [log_info] where  (user_id ='"+user_id+"')";
             try
             {
@@ -136,7 +136,7 @@ namespace WindowsFormsApplication1
                     }
                     if (num != 0)
                     {
-                        appointment form = new appointment();
+                        Appointment form = new Appointment(num+"");
                         form.Show();
                         this.Hide();
                     }
@@ -157,13 +157,6 @@ namespace WindowsFormsApplication1
             finally {
                 con.Close();
             }
-            Appointment_s_Form newForm = new Appointment_s_Form();
-            newForm.Show();
-        }
-
-        private void textBox5_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
