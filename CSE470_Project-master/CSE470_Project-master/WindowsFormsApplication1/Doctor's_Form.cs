@@ -7,13 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace WindowsFormsApplication1
 {
     public partial class Doctor_s_Form : Form
     {
         DateTime Snooze;
-
+        private Timer tm;
         public Doctor_s_Form(string val)
         {
             InitializeComponent();
@@ -27,7 +28,7 @@ namespace WindowsFormsApplication1
 
         private void Doctor_s_Form_Load(object sender, EventArgs e)
         {
-
+          
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -59,26 +60,18 @@ namespace WindowsFormsApplication1
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            
-                      
-            if (DateTime.Now == Snooze)
-            {
-               
-                MessageBox.Show("");
-                timer1.Stop(); 
-            }
+
+            tm.Stop();
+            MessageBox.Show("asdjad");
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
-            Snooze = DateTime.Now.AddSeconds(10); ;
-           // MessageBox.Show(DateTime.Now + "/n" + Snooze);
-            if (DateTime.Now.Equals(Snooze)) 
-            {
-                MessageBox.Show("ADjalsalj");
-            }
-            
+            tm = new Timer();
+            tm.Interval = 1 * 1000; // 10 seconds
+            tm.Tick += new EventHandler(timer1_Tick);
+            tm.Start();
+                                
         }
         }
     }

@@ -39,6 +39,8 @@
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.csE_470_peraDataSet1 = new WindowsFormsApplication1.CSE_470_peraDataSet();
+            ((System.ComponentModel.ISupportInitialize)(this.csE_470_peraDataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -155,6 +157,11 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // csE_470_peraDataSet1
+            // 
+            this.csE_470_peraDataSet1.DataSetName = "CSE_470_peraDataSet";
+            this.csE_470_peraDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // Doctor_s_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -172,6 +179,7 @@
             this.Name = "Doctor_s_Form";
             this.Text = "Doctor_s_Form";
             this.Load += new System.EventHandler(this.Doctor_s_Form_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.csE_470_peraDataSet1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -189,5 +197,6 @@
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Timer timer1;
+        private CSE_470_peraDataSet csE_470_peraDataSet1;
     }
 }
