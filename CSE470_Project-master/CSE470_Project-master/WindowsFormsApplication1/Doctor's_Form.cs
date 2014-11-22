@@ -18,7 +18,7 @@ namespace WindowsFormsApplication1
         public Doctor_s_Form(string val)
         {
             InitializeComponent();
-            label1.Text = "Welcome Doc "+val+" have a nice time";
+            label1.Text = "Welcome Doc " + val + " have a nice time";
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -28,7 +28,7 @@ namespace WindowsFormsApplication1
 
         private void Doctor_s_Form_Load(object sender, EventArgs e)
         {
-          
+
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -43,7 +43,7 @@ namespace WindowsFormsApplication1
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-               
+
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -55,7 +55,7 @@ namespace WindowsFormsApplication1
 
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -71,9 +71,7 @@ namespace WindowsFormsApplication1
             tm.Interval = 1 * 1000; // 10 seconds
             tm.Tick += new EventHandler(timer1_Tick);
             tm.Start();
-                                
-        }
+
         }
     }
-
-
+}
